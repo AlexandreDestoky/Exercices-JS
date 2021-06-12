@@ -1,3 +1,4 @@
+"use strict";
 
 const prenoms = ["Andre","Pierre","Jean","Marc","Alexandre","Jean","Thomas"];
 

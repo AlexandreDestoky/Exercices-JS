@@ -1,3 +1,5 @@
+"use strict";
+
 const domicile =  {
   village : "Compogne",
   commune : "Bertogne",
