@@ -1,18 +1,32 @@
 "use strict";
 
 
-const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(' ');
-  return [first.toUpperCase(), ...others].join(' ');
-};
+const oneWord = function (str) {
+  return str.replaceAll(" ","").toLowerCase();
+  }
 
-// Higher-order function
-const transformer = function (str, fn) {
-  console.log(`Original string: ${str}`);
-  console.log(`Transformed string: ${fn(str)}`);
+const upperFirstWord = function(str) {
+  const [first,...others] = str.split(" ");
+  return [first.toUpperCase(),...others].join(" ");
+}
 
-  console.log(`Transformed by: ${fn.name}`);
-};
+const transformer = function (str,fn) {
+  console.log(fn(str));
+}
 
-transformer('JavaScript is the best!', upperFirstWord);
-transformer('JavaScript is the best!', oneWord);
+
+transformer("Javascript is the best !",upperFirstWord);
+transformer("Javascript is the best !",oneWord);
+
+const Operation = {
+  double(nbr) {
+    return nbr*2;
+  }
+}
+
+
+console.log(Operation.double(5));
+
+console.log(Math.random());
+
+console.log(Math.random);
