@@ -34,20 +34,28 @@ document.addEventListener("keydown", function (e) {
 });
 
 
-// ------- 183 ---------------
-// const header = document.querySelector('.header');
+// -------------- 183 ---------------
+const header = document.querySelector('.header');
 
-// const message = document.createElement("div");
-// message.classList.add("cookie-message");
+const message = document.createElement("div");
+message.classList.add("cookie-message");
 // console.log(message);
 
-// message.innerHTML = `Ce site utilise des cookies
-// <button class="btn btn--close-cookie">Got it ! </button> `;
+message.innerHTML = `Ce site utilise des cookies
+<button class="btn btn--close-cookie">Got it ! </button> `;
 // placer dans DOM
 // header.append(message);
 // header.prepend(message.cloneNode(true));
-// header.before(message);
+header.before(message);
 // header.after(message);
 
 // supprimer élément
-// document.querySelector(".btn--close-cookie").addEventListener("click",()=> message.remove());
+document.querySelector(".btn--close-cookie").addEventListener("click",()=> message.remove());
+
+// -------------- 184 ---------------
+
+message.style.backgroundColor = "#37383d";
+message.style.width = "120%";
+// console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
+message.style.height = parseInt(getComputedStyle(message).height) + 20 + "px";
