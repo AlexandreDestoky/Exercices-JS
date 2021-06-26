@@ -32,3 +32,22 @@ document.addEventListener("keydown", function (e) {
     closeModal();
   }
 });
+
+
+// ------- 183 ---------------
+// const header = document.querySelector('.header');
+
+// const message = document.createElement("div");
+// message.classList.add("cookie-message");
+// console.log(message);
+
+// message.innerHTML = `Ce site utilise des cookies
+// <button class="btn btn--close-cookie">Got it ! </button> `;
+// placer dans DOM
+// header.append(message);
+// header.prepend(message.cloneNode(true));
+// header.before(message);
+// header.after(message);
+
+// supprimer élément
+// document.querySelector(".btn--close-cookie").addEventListener("click",()=> message.remove());
