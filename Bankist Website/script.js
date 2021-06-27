@@ -57,7 +57,7 @@ document.querySelector(".btn--close-cookie").addEventListener("click",()=> messa
 message.style.backgroundColor = "#37383d";
 // message.style.height = "120%";
 // console.log(getComputedStyle(message).color);
-console.log(getComputedStyle(message).height);
+// console.log(getComputedStyle(message).height);
 message.style.height = parseInt(getComputedStyle(message).height) + 20 + "px";
 
 
@@ -143,27 +143,49 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 
 // -------------- 190 ---------------
 // Going downwards: child
-console.log(h1.querySelectorAll('.highlight'));
-console.log(h1.childNodes);
-console.log(h1.children);
+// console.log(h1.querySelectorAll('.highlight'));
+// console.log(h1.childNodes);
+// console.log(h1.children);
 h1.firstElementChild.style.color = 'white';
 h1.lastElementChild.style.color = 'orangered';
 
 // Going upwards: parents
-console.log(h1.parentNode);
-console.log(h1.parentElement);
+// console.log(h1.parentNode);
+// console.log(h1.parentElement);
 
 h1.closest('.header').style.background = 'var(--gradient-secondary)';
-
 h1.closest('h1').style.background = 'var(--gradient-primary)';
 
 // Going sideways: siblings
-console.log(h1.previousElementSibling);
-console.log(h1.nextElementSibling);
+// console.log(h1.previousElementSibling);
+// console.log(h1.nextElementSibling);
+// console.log(h1.previousSibling);
+// console.log(h1.nextSibling);
 
-console.log(h1.previousSibling);
-console.log(h1.nextSibling);
 
-console.log(h1.parentElement.children);
-[...h1.parentElement.children].forEach(function (el) {
-  if (el !== 
+// -------------- 190 ---------------
+const tabs = document.querySelectorAll(".operations__tab");
+const tabsContainer = document.querySelector(".operations__tab-container");
+const tabsContent = document.querySelectorAll(".operations__content");
+
+// MAUVAISE PRATIQUE
+// tabs.forEach(el => el.addEventListener("click",(e)=> {
+//   console.log(e.target);
+// }))
+
+tabsContainer.addEventListener("click",(e)=> {
+  // if(e.target.classList.contains("operations__tab") || e.target.parentElement.classList.contains("operations__tab") ) {
+  //   console.log(e.target);
+  // }
+  const clicked = e.target.closest(".operations__tab");
+  console.log(clicked);
+  if(!clicked) return;
+
+  tabs.forEach(el => el.classList.remove("operations__tab--active"));
+  clicked.classList.add("operations__tab--active");
+  
+  const dataTab = clicked.getAttribute("data-tab");
+  tabsContent.forEach(el => el.classList.remove("operations__content--active"));
+  tabsContent[dataTab-1].classList.add("operations__content--active");
+  
+})
