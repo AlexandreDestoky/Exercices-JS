@@ -61,7 +61,7 @@ console.log(getComputedStyle(message).height);
 message.style.height = parseInt(getComputedStyle(message).height) + 20 + "px";
 
 
-// -------------- 184 ---------------
+// -------------- 185 ---------------
 const btnScrollTo = document.querySelector(".btn--scroll-to");
 const section1 = document.querySelector("#section--1");
 
@@ -75,7 +75,7 @@ btnScrollTo.addEventListener("click",function(e){
 })
 
 
-// -------------- 185 ---------------
+// -------------- 186 ---------------
 const h1 = document.querySelector("h1");
 const alert1 = function(e) {
   alert("addEventListener : ça marche !");
@@ -84,3 +84,6 @@ const alert1 = function(e) {
 h1.addEventListener("mouseenter",alert1)
 
 setTimeout(()=> h1.removeEventListener("mouseenter",alert1),3000);
+
+
+// -------------- 186 ---------------
