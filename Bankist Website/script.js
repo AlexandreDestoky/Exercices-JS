@@ -73,3 +73,14 @@ btnScrollTo.addEventListener("click",function(e){
   // MODERNE
   section1.scrollIntoView({behavior:"smooth"});
 })
+
+
+// -------------- 185 ---------------
+const h1 = document.querySelector("h1");
+const alert1 = function(e) {
+  alert("addEventListener : ça marche !");
+}
+
+h1.addEventListener("mouseenter",alert1)
+
+setTimeout(()=> h1.removeEventListener("mouseenter",alert1),3000);
