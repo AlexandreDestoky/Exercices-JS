@@ -52,10 +52,24 @@ header.before(message);
 // supprimer élément
 document.querySelector(".btn--close-cookie").addEventListener("click",()=> message.remove());
 
-// -------------- 184 ---------------
 
+// -------------- 184 ---------------
 message.style.backgroundColor = "#37383d";
-message.style.width = "120%";
+// message.style.height = "120%";
 // console.log(getComputedStyle(message).color);
 console.log(getComputedStyle(message).height);
 message.style.height = parseInt(getComputedStyle(message).height) + 20 + "px";
+
+
+// -------------- 184 ---------------
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+const section1 = document.querySelector("#section--1");
+
+btnScrollTo.addEventListener("click",function(e){
+  const s1coord = section1.getBoundingClientRect();
+
+  // document.documentElement.style.scrollBehavior = "smooth"; Pour tout HTML
+  // window.scrollTo({top: s1coord.top + window.pageYOffset,behavior:"smooth"});
+  // MODERNE
+  section1.scrollIntoView({behavior:"smooth"});
+})
