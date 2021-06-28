@@ -81,9 +81,9 @@ const alert1 = function(e) {
   alert("addEventListener : ça marche !");
 }
 
-h1.addEventListener("mouseenter",alert1)
+// h1.addEventListener("mouseenter",alert1)
 
-setTimeout(()=> h1.removeEventListener("mouseenter",alert1),3000);
+// setTimeout(()=> h1.removeEventListener("mouseenter",alert1),3000);
 
 
 // -------------- 188 ---------------
@@ -153,8 +153,8 @@ h1.lastElementChild.style.color = 'orangered';
 // console.log(h1.parentNode);
 // console.log(h1.parentElement);
 
-h1.closest('.header').style.background = 'var(--gradient-secondary)';
-h1.closest('h1').style.background = 'var(--gradient-primary)';
+// h1.closest('.header').style.background = 'var(--gradient-secondary)';
+// h1.closest('h1').style.background = 'var(--gradient-primary)';
 
 // Going sideways: siblings
 // console.log(h1.previousElementSibling);
@@ -163,7 +163,7 @@ h1.closest('h1').style.background = 'var(--gradient-primary)';
 // console.log(h1.nextSibling);
 
 
-// -------------- 190 ---------------
+// -------------- 191 ---------------
 const tabs = document.querySelectorAll(".operations__tab");
 const tabsContainer = document.querySelector(".operations__tab-container");
 const tabsContent = document.querySelectorAll(".operations__content");
@@ -187,5 +187,23 @@ tabsContainer.addEventListener("click",(e)=> {
   const dataTab = clicked.getAttribute("data-tab");
   tabsContent.forEach(el => el.classList.remove("operations__content--active"));
   tabsContent[dataTab-1].classList.add("operations__content--active");
-  
 })
+
+
+// -------------- 192 ---------------
+const handleHover = function (e) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+};
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+nav.addEventListener('mouseout', handleHover.bind(1));
+
+// -------------- 193 ---------------
