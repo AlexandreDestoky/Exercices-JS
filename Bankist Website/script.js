@@ -208,7 +208,7 @@ const handleHover = function (e) {
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
 
-// -------------- 193 ---------------
+// -------------- 193 et 194---------------
 
 const navHeight = nav.getBoundingClientRect().height;
 
@@ -227,3 +227,7 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 
 headerObserver.observe(header);
+
+// L'équivalent d'un position sticky mais en JS 
+
+
