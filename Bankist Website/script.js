@@ -339,9 +339,13 @@ dotContainer.addEventListener("click", function (e) {
 });
 
 
-// -------------- 199--------------
-window.addEventListener("beforeunload",function(e){
-  e.preventDefault();
-  console.log(e);
-  e.returnValue = "";
-})
+// -------------- 199 --------------
+// window.addEventListener("beforeunload",function(e){
+//   e.preventDefault();
+//   console.log(e);
+//   e.returnValue = "";
+// })
+
+// -------------- 200 --------------
+// Defer and Async 
+
