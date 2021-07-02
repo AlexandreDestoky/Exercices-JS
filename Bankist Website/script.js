@@ -265,7 +265,7 @@ const imgObserver = new IntersectionObserver(loadImg, {
 
 imgTargets.forEach(img => imgObserver.observe(img));
 
-// -------------- 197 --------------
+// -------------- 197 198--------------
 // Selection DOM
 const slides = document.querySelectorAll(".slide");
 const btnGauche = document.querySelector(".slider__btn--left");
@@ -337,3 +337,11 @@ dotContainer.addEventListener("click", function (e) {
     activateDot(slide);
   }
 });
+
+
+// -------------- 199--------------
+window.addEventListener("beforeunload",function(e){
+  e.preventDefault();
+  console.log(e);
+  e.returnValue = "";
+})
