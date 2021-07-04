@@ -28,9 +28,7 @@ class Person {
   get nom() {
     return this._nom;
   }
-
 }
-
 
 const alexandre = new Person("Destoky", "Alexandre", 24);
 // alexandre.anneeNaissance();
