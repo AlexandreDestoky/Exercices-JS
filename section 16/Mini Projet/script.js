@@ -84,7 +84,16 @@ console.log(request);
 const dataPaysEtVoisin = function (pays) {
   fetch(`https://restcountries.eu/rest/v2/name/${pays}`)
     .then(response => response.json())
-    .then(response => affichePays(response[0]));
+    .then(response => {
+      affichePays(response[0]);
+      const voisin = response[0].borders[0];
+
+      if (!voisin) return;
+      return fetch(`https://restcountries.eu/rest/v2/alpha/${voisin}`);
+    })
+    .then(response => response.json())
+    .then(response => affichePays(response, "neighbour"));
+    
 };
 
 dataPaysEtVoisin("belgique");
