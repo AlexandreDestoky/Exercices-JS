@@ -78,8 +78,13 @@ const affichePays = function (data, className = "") {
 //   request.send();
 
 // Méthode Fetch
-const request = fetch(`https://restcountries.eu/rest/v2/name/france`);
-console.log(request);
+// const request = fetch(`https://restcountries.eu/rest/v2/name/france`);
+// console.log(request);
+
+const afficheErreur = function(msg) {
+  countriesContainer.insertAdjacentText("beforeend",msg);
+  // countriesContainer.style.opacity = 1;
+}
 
 const dataPaysEtVoisin = function (pays) {
   fetch(`https://restcountries.eu/rest/v2/name/${pays}`)
@@ -92,7 +97,13 @@ const dataPaysEtVoisin = function (pays) {
       return fetch(`https://restcountries.eu/rest/v2/alpha/${voisin}`);
     })
     .then(response => response.json())
-    .then(response => affichePays(response, "neighbour"));
+    .then(response => affichePays(response, "neighbour"))
+    .catch(err => {
+      afficheErreur(`Erreur : ${err}. Essayez encore !`);
+    })
+    .finally(()=> {
+      countriesContainer.style.opacity = 1
+    })
     
 };
 
