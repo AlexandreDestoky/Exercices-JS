@@ -88,7 +88,10 @@ const afficheErreur = function(msg) {
 
 const dataPaysEtVoisin = function (pays) {
   fetch(`https://restcountries.eu/rest/v2/name/${pays}`)
-    .then(response => response.json())
+    .then(response => {
+      if(!response.ok) throw new Error("Pays non trouvé !");
+      return response.json();
+    })
     .then(response => {
       affichePays(response[0]);
       const voisin = response[0].borders[0];
@@ -99,7 +102,7 @@ const dataPaysEtVoisin = function (pays) {
     .then(response => response.json())
     .then(response => affichePays(response, "neighbour"))
     .catch(err => {
-      afficheErreur(`Erreur : ${err}. Essayez encore !`);
+      afficheErreur(`Un problème est survenu : ${err}. Essayez encore !`);
     })
     .finally(()=> {
       countriesContainer.style.opacity = 1
@@ -108,4 +111,6 @@ const dataPaysEtVoisin = function (pays) {
 };
 
 dataPaysEtVoisin("belgique");
-dataPaysEtVoisin("spain");
+dataPaysEtVoisin("Espagne");
+// dataPaysEtVoisin("spain");
+
