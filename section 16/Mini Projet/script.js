@@ -86,18 +86,24 @@ const afficheErreur = function(msg) {
   // countriesContainer.style.opacity = 1;
 }
 
+const getJSON = function(url,errorMsg = "Un problème est survenu") {
+  return fetch(url)
+  .then(response => {
+    if(!response.ok) throw new Error(`${errorMsg}`);
+    return response.json();
+  })
+}
+
 const dataPaysEtVoisin = function (pays) {
-  fetch(`https://restcountries.eu/rest/v2/name/${pays}`)
-    .then(response => {
-      if(!response.ok) throw new Error("Pays non trouvé !");
-      return response.json();
-    })
+
+    getJSON(`https://restcountries.eu/rest/v2/name/${pays}`,"Pays non trouvé !")
     .then(response => {
       affichePays(response[0]);
       const voisin = response[0].borders[0];
 
-      if (!voisin) return;
-      return fetch(`https://restcountries.eu/rest/v2/alpha/${voisin}`);
+      if (!voisin) throw new Error("No neighbour found !");
+
+      return getJSON(`https://restcountries.eu/rest/v2/alpha/${voisin}`,"Test 2")
     })
     .then(response => response.json())
     .then(response => affichePays(response, "neighbour"))
@@ -111,6 +117,6 @@ const dataPaysEtVoisin = function (pays) {
 };
 
 dataPaysEtVoisin("belgique");
-dataPaysEtVoisin("Espagne");
+dataPaysEtVoisin("Australia");
 // dataPaysEtVoisin("spain");
 
