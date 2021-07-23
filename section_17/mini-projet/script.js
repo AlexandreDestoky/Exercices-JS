@@ -50,7 +50,7 @@
 
 // cd , dir , cls
 
-import cloneDeep from "../../node_modules/lodash-es/cloneDeep.js";
+import { cloneDeep } from "lodash";
 
 const state = {
   cart: [
