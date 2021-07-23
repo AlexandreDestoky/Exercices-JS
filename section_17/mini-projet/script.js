@@ -95,3 +95,4 @@ import "regenerator-runtime/runtime";
 
 
 // Explication bonne pratique du code
+//Correction code débutant en intermédiaire
