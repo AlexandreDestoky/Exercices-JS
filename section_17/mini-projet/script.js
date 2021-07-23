@@ -92,3 +92,6 @@ console.log(ShoppingCart2.cart.find(el => el.quantity >= 2));
 
 import "core-js/stable";
 import "regenerator-runtime/runtime";
+
+
+// Explication bonne pratique du code
