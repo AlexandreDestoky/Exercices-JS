@@ -1,0 +1,23 @@
+{
+  "name": "exercices-js",
+  "version": "1.0.0",
+  "description": "Exercices JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandreDestoky/Exercices-JS.git"
+  },
+  "author": "Alexandre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexandreDestoky/Exercices-JS/issues"
+  },
+  "homepage": "https://github.com/AlexandreDestoky/Exercices-JS#readme",
+  "dependencies": {
+    "leaflet": "^1.7.1",
+    "lodash-es": "^4.17.21"
+  }
+}
