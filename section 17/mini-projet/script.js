@@ -47,3 +47,5 @@ ShoppingCart2.addToCart("cherry",4);
 console.log(ShoppingCart2.shippingCost);
 
 //Export Modules en Node JS mais pas utile en JS
+
+// cd , dir , cls
