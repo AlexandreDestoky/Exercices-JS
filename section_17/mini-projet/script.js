@@ -96,3 +96,5 @@ import "regenerator-runtime/runtime";
 
 // Explication bonne pratique du code
 //Correction code débutant en intermédiaire
+
+// Bonne pratique de code (pas changé les données, utiliser méthode de tableau map/reduce/filter etc)
